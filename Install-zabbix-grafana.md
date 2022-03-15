@@ -40,7 +40,10 @@ Inicie o servidor Zabbix e os processos do agente e configure-os para que sejam 
 ```
 - Configure o frontend do Zabbix
 Conecte-se ao frontend Zabbix instalado: `http://server_ip_or_name`  
-Siga as etapas descritas na documentação do Zabbix: Instalando frontend
+Siga as etapas descritas na documentação do Zabbix: Instalando frontend  
+
+## 2. Instalação e configuração do Agent Zabbix.
+
 
 # Instalação Grafana
 ## 1. Para instalar a última versão OSS release:
@@ -71,5 +74,6 @@ sudo systemctl status grafana-server
 sudo systemctl enable grafana-server.service
 ``` 
 - Acesse http://ip do servidor:3000  
-User: admin
-Pass: admin
+User: admin  
+Pass: admin  
+
