@@ -43,7 +43,38 @@ Conecte-se ao frontend Zabbix instalado: `http://server_ip_or_name`
 Siga as etapas descritas na documentação do Zabbix: Instalando frontend  
 
 ## 2. Instalação e configuração do Agent Zabbix.
+- Instale o repositório
+```
+# wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-1+ubuntu20.04_all.deb
+# dpkg -i zabbix-release_6.0-1+ubuntu20.04_all.deb
+# apt update
+```
+- Verifique a versão do zabbix-agent disponível no repositório e faça a instalação:  
+```
+# apt search zabbix-agent
+# apt install zabbix-agent
+```
+Obs. Se o kernel do targets for antigo faça o download do agent correspondente e faça a instalação:  
+``` 
+- Acesse: https://repo.zabbix.com/zabbix/  
+- Faça o download do agente: wget https://repo.zabbix.com/zabbix/6.0/rhel/6/x86_64/zabbix-agent-6.0.0-1.el6.x86_64.rpm --no-check-certificate
+- Instale o pacote: rpm -ivh zabbix-agent-6.0.0-1.el6.x86_64.rpm 
 
+```
+Configuração básica para monitoramento via proxy:  
+- Acesse o arquivo: vim /etc/zabbix/zabbix_agentd.conf  
+- Configure conforme abaixo.
+```
+HostnameItem=system.hostname
+Include=/etc/zabbix/zabbix_agentd.d/*.conf
+LogFileSize=0
+LogFile=/var/log/zabbix/zabbix_agentd.log
+PidFile=/var/run/zabbix/zabbix_agentd.pid
+RefreshActiveChecks=120
+Server=192.168.192.7,192.168.192.8
+ServerActive=192.168.192.8
+
+``` 
 
 # Instalação Grafana
 ## 1. Para instalar a última versão OSS release:
