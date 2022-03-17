@@ -55,12 +55,12 @@ Siga as etapas descritas na documentação do Zabbix: Instalando frontend
 # apt install zabbix-agent
 ```
 Obs. Se o kernel do targets for antigo faça o download do agent correspondente e faça a instalação:  
-``` 
-- Acesse: https://repo.zabbix.com/zabbix/  
-- Faça o download do agente: wget https://repo.zabbix.com/zabbix/6.0/rhel/6/x86_64/zabbix-agent-6.0.0-1.el6.x86_64.rpm --no-check-certificate
-- Instale o pacote: rpm -ivh zabbix-agent-6.0.0-1.el6.x86_64.rpm 
 
-```
+- Acesse: `https://repo.zabbix.com/zabbix/`  
+- Faça o download do agente:  
+`wget https://repo.zabbix.com/zabbix/6.0/rhel/6/x86_64/zabbix-agent-6.0.0-1.el6.x86_64.rpm --no-check-certificate`
+- Instale o pacote: `rpm -ivh zabbix-agent-6.0.0-1.el6.x86_64.rpm`  
+
 Configuração básica para monitoramento via proxy:  
 - Acesse o arquivo: vim /etc/zabbix/zabbix_agentd.conf  
 - Configure conforme abaixo.
